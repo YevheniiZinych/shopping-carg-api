@@ -3,13 +3,17 @@ const { Schema, model } = require("mongoose");
 const { handleMongooseError } = require("../helpers");
 
 const restaurantSchema = new Schema(
-  {},
-  { versionKey: false, timestamps: true }
+  {
+    restaurant: String,
+    link: String,
+    menu: Array,
+  },
+  { versionKey: false }
 );
 
-shopSchema.post("save", handleMongooseError);
+restaurantSchema.post("save", handleMongooseError);
 
-const Restaurant = model("restaurant", restaurantSchema);
+const Restaurant = model("restaurants", restaurantSchema);
 
 module.exports = {
   Restaurant,

@@ -4,7 +4,8 @@ const cors = require("cors");
 
 const app = express();
 
-// const officesRouter = require("./routes/api/offices");
+const restaurantRouter = require("./routes/api/restaurants");
+const orderRouter = require("./routes/api/orders");
 
 require("dotenv").config();
 
@@ -14,7 +15,8 @@ app.use(logger(formatsLogger));
 app.use(cors());
 app.use(express.json());
 
-// app.use("/api/shpo");
+app.use("/api/restaurant", restaurantRouter);
+app.use("/api/order", orderRouter);
 
 app.use((req, res) => {
   res.status(404).json({ message: "Not found" });
