@@ -39,14 +39,14 @@ const orderSchema = new Schema(
         required: [true, "Set phone for delivery information"],
       },
     },
-    prise: {
+    totalPrice: {
       type: String,
     },
   },
   { versionKey: false, timestamps: true }
 );
 
-shopSchema.post("save", handleMongooseError);
+orderSchema.post("save", handleMongooseError);
 
 const Order = model("orders", orderSchema);
 
@@ -74,6 +74,7 @@ const addOrderSchema = Joi.object({
     phone: Joi.string().min(10).max(12).required(),
     address: Joi.string().required(),
   }),
+  totalPrice: Joi.string(),
 });
 
 module.exports = {
