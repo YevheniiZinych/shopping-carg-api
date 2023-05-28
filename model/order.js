@@ -14,7 +14,7 @@ const orderSchema = new Schema(
           type: String,
         },
         prise: {
-          type: String,
+          type: Number,
         },
         amount: {
           type: String,
@@ -40,7 +40,7 @@ const orderSchema = new Schema(
       },
     },
     totalPrice: {
-      type: String,
+      type: Number,
     },
   },
   { versionKey: false, timestamps: true }

@@ -1,6 +1,6 @@
 const { Order } = require("../model/order");
 
-const { ctrlWrapper, HttpError } = require("../helpers");
+const { ctrlWrapper } = require("../helpers");
 
 const addOrder = async (req, res) => {
   const newOrder = Order.create(req.body);
