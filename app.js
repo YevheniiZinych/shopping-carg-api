@@ -7,6 +7,7 @@ const app = express();
 
 const restaurantRouter = require("./routes/api/restaurants");
 const orderRouter = require("./routes/api/orders");
+const keyRouter = require("./routes/api/key");
 
 const swaggerDocument = require("./swagger.json");
 
@@ -21,6 +22,7 @@ app.use(express.json());
 app.use("/api/restaurant", restaurantRouter);
 app.use("/api/order", orderRouter);
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+app.use("/api/key", keyRouter);
 
 app.use((req, res) => {
   res.status(404).json({ message: "Not found" });
