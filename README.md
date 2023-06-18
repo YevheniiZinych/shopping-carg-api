@@ -11,7 +11,7 @@
 - [Live Page ](https://yevheniizinych.github.io/shopping-cart/)
 - [FrontEnd repo ](https://github.com/YevheniiZinych/shopping-cart)
 
-### Start project
+  ### Start project
 
-- `npm start` &mdash; server start in mode production
-- `npm run dev` &mdash; start the server in development mode
+  - `npm start` &mdash; server start in mode production
+  - `npm run dev` &mdash; start the server in development mode
